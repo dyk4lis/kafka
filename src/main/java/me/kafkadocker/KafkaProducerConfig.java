@@ -21,6 +21,13 @@ public class KafkaProducerConfig {
         configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, KAFKA_BROKER);
         configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+
+        configProps.put(ProducerConfig.ACKS_CONFIG, "all");
+        configProps.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, "10000");
+        configProps.put(ProducerConfig.CONNECTIONS_MAX_IDLE_MS_CONFIG, "10000");
+        configProps.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, "10000");
+
+
         return new DefaultKafkaProducerFactory<>(configProps);
     }
 

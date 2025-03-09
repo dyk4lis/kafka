@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class KafkaConsumer {
-    @KafkaListener(topics = "my-topic", groupId = "my-consumer-group",containerFactory = "kafkaListenerContainerFactory")
+    @KafkaListener(topics = "TopicA", groupId = "my-consumer-group",containerFactory = "kafkaListenerContainerFactory")
     public void listen(ConsumerRecord<String, String> record) {
         System.out.println("📩 Получено сообщение: " + record.value());
         System.out.println("🔹 Из топика: " + record.topic());

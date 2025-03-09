@@ -14,7 +14,7 @@ public class KafkaController {
         this.kafkaProducer = kafkaProducer;
     }
 
-    // http://localhost:8080/kafka/send?topic=my-topic&message=HelloKafka
+    // http://localhost:8080/kafka/send?topic=TopicA&message=HelloKafka
     @GetMapping("/send")
     public String sendMessage(@RequestParam String topic, @RequestParam String message) {
         kafkaProducer.sendMessage(topic, message);
