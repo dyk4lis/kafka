@@ -27,7 +27,6 @@ public class KafkaProducerConfig {
         configProps.put(ProducerConfig.CONNECTIONS_MAX_IDLE_MS_CONFIG, "10000");
         configProps.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, "10000");
 
-
         return new DefaultKafkaProducerFactory<>(configProps);
     }
 
